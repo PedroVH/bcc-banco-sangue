@@ -18,9 +18,15 @@ public class TipoSanguineoEndPoint {
     AbstractDAO<TipoSanguineo> dao = TipoSanguineoDAO.getInstance();
 
     @GetMapping(value = "/{id}", produces = "application/json")
-    public ResponseEntity<Object> get(@PathVariable("id") int id) {
+    public ResponseEntity<Object> getTipoSanguineo(@PathVariable("id") int id) {
         TipoSanguineo tipo = dao.find(id);
         return new ResponseEntity<>(tipo, HttpStatus.OK);
+    }
+
+    @GetMapping(value = "/{id}/disponivel", produces = "application/json")
+    public ResponseEntity<String> getDisponivel(@PathVariable("id") int id) {
+        String tipoDisponivel = dao.find(id).getQtdDisponivel() + "ml";
+        return new ResponseEntity<>(tipoDisponivel, HttpStatus.OK);
     }
 
     @GetMapping(produces = "application/json")

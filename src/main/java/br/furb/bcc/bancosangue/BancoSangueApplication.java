@@ -7,7 +7,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class BancoSangueApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BancoSangueApplication.class, args);
+		try {
+			SpringApplication.run(BancoSangueApplication.class, args);
+		} catch (Throwable e){
+			e.printStackTrace();
+		}
 	}
 
 }
