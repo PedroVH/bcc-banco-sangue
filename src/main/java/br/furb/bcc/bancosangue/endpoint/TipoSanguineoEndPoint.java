@@ -44,4 +44,5 @@ public class TipoSanguineoEndPoint {
 
         return responseEntity;
     }
+
 }

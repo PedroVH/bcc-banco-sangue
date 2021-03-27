@@ -4,6 +4,8 @@
 .classpath
 .settings
 /.mvn/
+.project
+.mvn
 
 HELP.md
 !.mvn/wrapper/maven-wrapper.jar
