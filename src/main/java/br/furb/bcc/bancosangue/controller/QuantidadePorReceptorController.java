@@ -12,19 +12,13 @@ public class QuantidadePorReceptorController {
     //A+ pode receber de : A+, A-, O+ e O-
     public void quantidadeDisponivelAPositivo(Integer id) {
     	TipoSanguineo tipoReceptor = dao.find(id);
-    	double qtdDisponivel = 0;
+    	long qtdDisponivel = 0;
     	ArrayList<TipoSanguineo> tiposSanguineos = dao.getAll();
     	for (TipoSanguineo tipoDoador:tiposSanguineos)  {
-    		if (tipoDoador.getTipo() == "A+") {
-    			qtdDisponivel+=tipoDoador.getQtdDisponivel();
-    		}
-    		if (tipoDoador.getTipo() == "A-") {
-    			qtdDisponivel+=tipoDoador.getQtdDisponivel();
-    		}
-    		if (tipoDoador.getTipo() == "O+") {
-    			qtdDisponivel+=tipoDoador.getQtdDisponivel();
-    		}
-    		if (tipoDoador.getTipo() == "O-") {
+    		if (tipoDoador.getTipo().equals("A+") ||
+    			tipoDoador.getTipo().equals("A-") ||
+    			tipoDoador.getTipo().equals("O+") ||
+    			tipoDoador.getTipo().equals("O-")) {
     			qtdDisponivel+=tipoDoador.getQtdDisponivel();
     		}
     	tipoReceptor.setQtdDisponivel(qtdDisponivel);
@@ -34,13 +28,11 @@ public class QuantidadePorReceptorController {
   //A- pode receber de : A- e O-
     public void quantidadeDisponivelANegativo(Integer id) {
     	TipoSanguineo tipoReceptor = dao.find(id);
-    	double qtdDisponivel = 0;
+    	long qtdDisponivel = 0;
     	ArrayList<TipoSanguineo> tiposSanguineos = dao.getAll();
     	for (TipoSanguineo tipoDoador:tiposSanguineos)  {
-    		if (tipoDoador.getTipo() == "A-") {
-    			qtdDisponivel+=tipoDoador.getQtdDisponivel();
-    		}
-    		if (tipoDoador.getTipo() == "O-") {
+    		if (tipoDoador.getTipo().equals("A-") ||
+    			tipoDoador.getTipo().equals("O-")) {
     			qtdDisponivel+=tipoDoador.getQtdDisponivel();
     		}
     	tipoReceptor.setQtdDisponivel(qtdDisponivel);
@@ -50,19 +42,13 @@ public class QuantidadePorReceptorController {
   //B+ pode receber de : B+, B-, O+ e O-
     public void quantidadeDisponivelBPositivo(Integer id) {
     	TipoSanguineo tipoReceptor = dao.find(id);
-    	double qtdDisponivel = 0;
+    	long qtdDisponivel = 0;
     	ArrayList<TipoSanguineo> tiposSanguineos = dao.getAll();
     	for (TipoSanguineo tipoDoador:tiposSanguineos)  {
-    		if (tipoDoador.getTipo() == "B+") {
-    			qtdDisponivel+=tipoDoador.getQtdDisponivel();
-    		}
-    		if (tipoDoador.getTipo() == "B-") {
-    			qtdDisponivel+=tipoDoador.getQtdDisponivel();
-    		}
-    		if (tipoDoador.getTipo() == "O+") {
-    			qtdDisponivel+=tipoDoador.getQtdDisponivel();
-    		}
-    		if (tipoDoador.getTipo() == "O-") {
+    		if (tipoDoador.getTipo().equals("B+") ||
+    			tipoDoador.getTipo().equals("B-") ||
+    			tipoDoador.getTipo().equals("O+") ||
+    			tipoDoador.getTipo().equals("O-")) {
     			qtdDisponivel+=tipoDoador.getQtdDisponivel();
     		}
     	tipoReceptor.setQtdDisponivel(qtdDisponivel);
@@ -72,13 +58,11 @@ public class QuantidadePorReceptorController {
     //B- pode receber de : B- e O-
     public void quantidadeDisponivelBNegativo(Integer id) {
     	TipoSanguineo tipoReceptor = dao.find(id);
-    	double qtdDisponivel = 0;
+    	long qtdDisponivel = 0;
     	ArrayList<TipoSanguineo> tiposSanguineos = dao.getAll();
     	for (TipoSanguineo tipoDoador:tiposSanguineos)  {
-    		if (tipoDoador.getTipo() == "B-") {
-    			qtdDisponivel+=tipoDoador.getQtdDisponivel();
-    		}
-    		if (tipoDoador.getTipo() == "O-") {
+    		if (tipoDoador.getTipo().equals("B-") ||
+    			tipoDoador.getTipo().equals("O-")) {
     			qtdDisponivel+=tipoDoador.getQtdDisponivel();
     		}
     	tipoReceptor.setQtdDisponivel(qtdDisponivel);
@@ -88,7 +72,7 @@ public class QuantidadePorReceptorController {
   //AB+ pode receber de : todos
     public void quantidadeDisponivelABPositivo(Integer id) {
     	TipoSanguineo tipoReceptor = dao.find(id);
-    	double qtdDisponivel = 0;
+    	long qtdDisponivel = 0;
     	ArrayList<TipoSanguineo> tiposSanguineos = dao.getAll();
     	for (TipoSanguineo tipoDoador:tiposSanguineos)  {
     		qtdDisponivel+=tipoDoador.getQtdDisponivel();
@@ -99,19 +83,14 @@ public class QuantidadePorReceptorController {
   //AB- pode receber de : A-, B-, O- e AB-
     public void quantidadeDisponivelABNegativo(Integer id) {
     	TipoSanguineo tipoReceptor = dao.find(id);
-    	double qtdDisponivel = 0;
+    	long qtdDisponivel = 0;
     	ArrayList<TipoSanguineo> tiposSanguineos = dao.getAll();
     	for (TipoSanguineo tipoDoador:tiposSanguineos)  {
-    		if (tipoDoador.getTipo() == "A-") {
-    			qtdDisponivel+=tipoDoador.getQtdDisponivel();
-    		}
-    		if (tipoDoador.getTipo() == "B-") {
-    			qtdDisponivel+=tipoDoador.getQtdDisponivel();
-    		}
-    		if (tipoDoador.getTipo() == "O-") {
-    			qtdDisponivel+=tipoDoador.getQtdDisponivel();
-    		}
-    		if (tipoDoador.getTipo() == "AB-") {
+    		if (tipoDoador.getTipo().equals("A-") ||
+    			tipoDoador.getTipo().equals("B-") ||
+    			tipoDoador.getTipo().equals("O-") ||
+    			tipoDoador.getTipo().equals("B-") ||
+    			tipoDoador.getTipo().equals("AB-")) {
     			qtdDisponivel+=tipoDoador.getQtdDisponivel();
     		}
     	tipoReceptor.setQtdDisponivel(qtdDisponivel);
@@ -121,13 +100,11 @@ public class QuantidadePorReceptorController {
   //O+ pode receber de : O+ e O-
     public void quantidadeDisponivelOPositivo(Integer id) {
     	TipoSanguineo tipoReceptor = dao.find(id);
-    	double qtdDisponivel = 0;
+    	long qtdDisponivel = 0;
     	ArrayList<TipoSanguineo> tiposSanguineos = dao.getAll();
     	for (TipoSanguineo tipoDoador:tiposSanguineos)  {
-    		if (tipoDoador.getTipo() == "O+") {
-    			qtdDisponivel+=tipoDoador.getQtdDisponivel();
-    		}
-    		if (tipoDoador.getTipo() == "O-") {
+    		if (tipoDoador.getTipo().equals("O+") ||
+    			tipoDoador.getTipo().equals("O-"))  {
     			qtdDisponivel+=tipoDoador.getQtdDisponivel();
     		}
     	tipoReceptor.setQtdDisponivel(qtdDisponivel);
@@ -137,10 +114,10 @@ public class QuantidadePorReceptorController {
   //O- pode receber de : A-, B-, O- e AB-
     public void quantidadeDisponivelONegativo(Integer id) {
     	TipoSanguineo tipoReceptor = dao.find(id);
-    	double qtdDisponivel = 0;
+    	long qtdDisponivel = 0;
     	ArrayList<TipoSanguineo> tiposSanguineos = dao.getAll();
     	for (TipoSanguineo tipoDoador:tiposSanguineos)  {
-    		if (tipoDoador.getTipo() == "O-") {
+    		if (tipoDoador.getTipo().equals("O-")) {
     			qtdDisponivel+=tipoDoador.getQtdDisponivel();
     		}
     	tipoReceptor.setQtdDisponivel(qtdDisponivel);
