@@ -17,12 +17,10 @@ import java.util.Map;
 public class TipoSanguineoEndPoint {
     AbstractDAO<TipoSanguineo> dao = TipoSanguineoDAO.getInstance();
 
-    @GetMapping(value = "/{id}")
-    public ResponseEntity<String> get(@PathVariable("id") int id) {
+    @GetMapping(value = "/{id}", produces = "application/json")
+    public ResponseEntity<Object> get(@PathVariable("id") int id) {
         TipoSanguineo tipo = dao.find(id);
-
-        String response = tipo.getQtdDisponivel() + " MLs para o tipo " + tipo.getTipo();
-        return new ResponseEntity<>(response, HttpStatus.OK);
+        return new ResponseEntity<>(tipo, HttpStatus.OK);
     }
 
     @GetMapping(produces = "application/json")
