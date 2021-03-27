@@ -1,1 +1,7 @@
 /target/
+/.project/
+.gitignore/
+.classpath/
+/.settings/
+/.mvn/
+
