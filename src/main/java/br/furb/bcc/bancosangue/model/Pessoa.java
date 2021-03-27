@@ -3,7 +3,7 @@ package br.furb.bcc.bancosangue.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "tipo_sanguineo")
+@Table(name = "pessoa")
 public class Pessoa {
 	
 	@Id
