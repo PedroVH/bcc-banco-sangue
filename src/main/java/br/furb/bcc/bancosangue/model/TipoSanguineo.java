@@ -7,18 +7,18 @@ import javax.persistence.*;
 public class TipoSanguineo {
     @Id
     @GeneratedValue
-    private Long id;
+    private int id;
 
     private String tipo;
 
     @Column(name = "qtd_disponivel")
     private double qtdDisponivel;
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
