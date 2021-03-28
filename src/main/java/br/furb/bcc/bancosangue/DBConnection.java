@@ -24,6 +24,7 @@ public class DBConnection {
                     .setProperty("hibernate.hbm2ddl.auto","update")
                     .setProperty("hibernate.connection.autocommit","true")
                     .addAnnotatedClass(br.furb.bcc.bancosangue.model.TipoSanguineo.class)
+                    .addAnnotatedClass(br.furb.bcc.bancosangue.model.Pessoa.class)
                     //TODO adicionar outras entidades aqui
                     .buildSessionFactory();
         }

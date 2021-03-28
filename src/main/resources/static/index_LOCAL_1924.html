@@ -1,0 +1,421 @@
+<!-- Freelancer is a free bootstrap theme created by Start Bootstrap.
+The download includes the complete source files including HTML,
+CSS, and JavaScript as well as optional SASS stylesheets for easy
+customization. -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Formulário de Doação e Coleta de Sangue | FURB</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="../static/assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script
+      src="https://use.fontawesome.com/releases/v5.15.1/js/all.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Google fonts-->
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body id="page-top">
+    <!-- Navbar-->
+    <nav
+      class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top"
+      id="mainNav"
+    >
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top"
+          >DOAÇÃO E COLETA DE SANGUE</a
+        >
+        <button
+          class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          Menu
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item mx-0 mx-lg-1">
+              <a
+                class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                href="#form"
+                >FORMULÁRIO</a
+              >
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a
+                class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                href="#report"
+                >Relatório</a
+              >
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a
+                class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                href="#graphics"
+                >Gráfico</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Landing -->
+    <header class="masthead bg-primary text-white text-center">
+      <div class="container d-flex align-items-center flex-column">
+        <!-- Masthead Avatar Image-->
+        <img
+          class="masthead-avatar mb-5"
+          src="../static/assets/blood.png"
+          alt=""
+          id="bloodimg"
+        />
+        <!-- Masthead Heading-->
+        <h1 class="masthead-heading text-uppercase mb-0">
+          Doação e Coleta de Sangue
+        </h1>
+        <!-- Icon Divider-->
+        <div class="divider-custom divider-light">
+          <div class="divider-custom-line"></div>
+          <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+          <div class="divider-custom-line"></div>
+        </div>
+        <!-- Masthead Subheading-->
+        <p class="masthead-subheading font-weight-light mb-0">
+           FURB - Fundamentos Matemáticos
+        </p>
+      </div>
+    </header>
+
+    <!-- Formulário-->
+    <section class="page-section" id="form">
+      <div class="container">
+        <!-- Contact Section Heading-->
+        <h2
+          class="page-section-heading text-center text-uppercase text-secondary mb-0"
+        >
+          Formulário
+        </h2>
+
+        <!-- Icon Divider-->
+        <div class="divider-custom">
+          <div class="divider-custom-line"></div>
+          <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+          <div class="divider-custom-line"></div>
+        </div>
+
+        <!-- Contact Section Form-->
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <form id="contactForm" name="sentMessage" novalidate="novalidate">
+              <div class="control-group">
+                <div
+                  class="form-group floating-label-form-group controls mb-0 pb-2"
+                >
+                  <label>Nome</label>
+                  <input
+                    class="form-control"
+                    id="name"
+                    type="text"
+                    placeholder="Nome"
+                    required="required"
+                    data-validation-required-message="Por favor digite seu nome."
+                  />
+                  <p class="help-block text-danger"></p>
+                </div>
+              </div>
+
+              <div class="control-group>">
+                <div
+                  class="form-group floating-label-form-group controls mb-0 pb-2"
+                >
+                  <label>Sexo</label>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <span>Sexo</span>
+                    <div class="dropdown d-flex justify-content-end">
+                      <button
+                        class="btn dropdown-toggle"
+                        type="button"
+                        id="dropdownMenuButton"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      ></button>
+                      <div
+                        class="dropdown-menu"
+                        aria-labelledby="dropdownMenuButton"
+                      >
+                        <a class="dropdown-item">Feminino</a>
+                        <a class="dropdown-item">Masculino</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <p class="help-block text-danger"></p>
+                </div>
+              </div>
+
+              <div class="control-group">
+                <div
+                  class="form-group floating-label-form-group controls mb-0 pb-2"
+                >
+                  <label>Idade</label>
+                  <input
+                    class="form-control"
+                    id="phone"
+                    type="number"
+                    placeholder="Idade"
+                    required="required"
+                    data-validation-required-message="Por favor digite sua idade."
+                  />
+                  <p class="help-block text-danger"></p>
+                </div>
+              </div>
+
+              <div class="control-group>">
+                <div
+                  class="form-group floating-label-form-group controls mb-0 pb-2"
+                >
+                  <label>Tipo Sanguíneo</label>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <span>Tipo Sanguíneo</span>
+                    <div class="dropdown d-flex justify-content-end">
+                      <button
+                        class="btn dropdown-toggle"
+                        type="button"
+                        id="dropdownMenuButton"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      ></button>
+                      <div
+                        class="dropdown-menu"
+                        aria-labelledby="dropdownMenuButton"
+                      >
+                        <a class="dropdown-item">A+</a>
+                        <a class="dropdown-item">A-</a>
+                        <a class="dropdown-item">B-</a>
+                        <a class="dropdown-item">B+</a>
+                        <a class="dropdown-item">AB+</a>
+                        <a class="dropdown-item">AB-</a>
+                        <a class="dropdown-item">O+</a>
+                        <a class="dropdown-item">O-</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <p class="help-block text-danger"></p>
+                </div>
+              </div>
+
+              <div class="control-group">
+                <div
+                  class="form-group floating-label-form-group controls mb-0 pb-2"
+                >
+                  <label>Quantidade de Sangue</label>
+                  <input
+                    class="form-control"
+                    id="phone"
+                    type="number"
+                    placeholder="Quantidade de Sangue"
+                    required="required"
+                    data-validation-required-message="Por favor digite a quantidade de sangue."
+                  />
+                  <p class="help-block text-danger"></p>
+                </div>
+              </div>
+
+              <div class="control-group">
+                <div
+                  class="form-group floating-label-form-group controls mb-0 pb-2"
+                >
+                  <label>Outros dados</label>
+                  <textarea
+                    class="form-control"
+                    id="message"
+                    rows="5"
+                    placeholder="Outros dados"
+                  ></textarea>
+                  <p class="help-block text-danger"></p>
+                </div>
+              </div>
+
+              <br />
+              <div id="success"></div>
+              <div class="form-group">
+                <button
+                  class="btn btn-primary btn-xl"
+                  id="sendMessageButton"
+                  type="submit"
+                >
+                  Enviar
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Infos Section-->
+    <section class="page-section bg-primary text-white mb-0" id="report">
+      <div class="container">
+        <!-- About Section Heading-->
+        <h2 class="page-section-heading text-center text-uppercase text-white">
+          Relatório
+        </h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom divider-light">
+          <div class="divider-custom-line"></div>
+          <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+          <div class="divider-custom-line"></div>
+        </div>
+        <!-- About Section Content-->
+        <div class="row">
+          <div class="col-lg-4 ml-auto">
+            <div class="control-group lead>">
+              <div
+                class="form-group floating-label-form-group controls mb-0 pb-2"
+              >
+                <label>Tipo Sanguíneo</label>
+                <div class="d-flex justify-content-between align-items-center">
+                  <span>Tipo Sanguíneo</span>
+                  <div class="dropdown d-flex justify-content-end">
+                    <button
+                      class="btn dropdown-toggle"
+                      type="button"
+                      id="dropdownMenuButton"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                      style="color: white;"
+                    ></button>
+                    <div
+                      class="dropdown-menu"
+                      aria-labelledby="dropdownMenuButton"
+                    >
+                      <a class="dropdown-item">A+</a>
+                      <a class="dropdown-item">A-</a>
+                      <a class="dropdown-item">B-</a>
+                      <a class="dropdown-item">B+</a>
+                      <a class="dropdown-item">AB+</a>
+                      <a class="dropdown-item">AB-</a>
+                      <a class="dropdown-item">O+</a>
+                      <a class="dropdown-item">O-</a>
+                    </div>
+                  </div>
+                </div>
+
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mr-auto">
+              <div class="control-group lead">
+                <div
+                  class="form-group floating-label-form-group controls mb-0 pb-2"
+                >
+                  <span>Quantidade de Sangue a Ser Recebido</span>
+                  <p class="help-block text-danger"></p>
+                </div>
+                <p class="help-block text-danger"></p>
+                  <div
+                  class="floating-label-form-group controls mb-0 pb-2" style="padding-left: 0px; border-left: 0px;"
+                >
+                <span>Quantidade de Sangue Disponível</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- About Section Button-->
+        <div class="text-center mt-4">
+          <a class="btn btn-xl btn-outline-light">
+            <i class="fas fa-download mr-2"></i>
+            Gerar Relatório
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gráfico-->
+    <section class="page-section mb-0" id="graphics">
+
+      <div class="container">
+        <!-- About Section Heading-->
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">
+          Relação de Doadores e Receptores
+        </h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom divider">
+          <div class="divider-custom-line"></div>
+          <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+          <div class="divider-custom-line"></div>
+        </div>
+        <!-- About Section Content-->
+        <div class="row">
+          <div
+            class="col-lg-12 d-flex align-content-center justify-content-center"
+          >
+            <p class="lead">
+              <img
+                class="masthead-avatar mb-5"
+                src="../static/assets/rockstar-id.png"
+                alt=""
+              />
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <div class="copyright py-4 text-center text-white">
+      <div class="container">
+        <small
+          >Ana Caroline Cipriani dos Santos, Nicole Taufenbach e Pedro Vinicius
+          Hostert.</small
+        >
+      </div>
+    </div>
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+  </body>
+</html>

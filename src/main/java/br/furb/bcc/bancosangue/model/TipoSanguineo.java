@@ -12,7 +12,7 @@ public class TipoSanguineo {
     private String tipo;
 
     @Column(name = "qtd_disponivel")
-    private double qtdDisponivel;
+    private long qtdDisponivel;
 
     public int getId() {
         return id;
@@ -30,11 +30,11 @@ public class TipoSanguineo {
         this.tipo = tipo;
     }
 
-    public double getQtdDisponivel() {
+    public long getQtdDisponivel() {
         return qtdDisponivel;
     }
 
-    public void setQtdDisponivel(double qtdDisponivel) {
+    public void setQtdDisponivel(long qtdDisponivel) {
         this.qtdDisponivel = qtdDisponivel;
     }
 }

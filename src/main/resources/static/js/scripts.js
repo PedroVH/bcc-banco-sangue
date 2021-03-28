@@ -66,4 +66,16 @@
     });
   
   })(jQuery); // End of use strict
-  
+
+/*
+*  Get from API
+*/
+
+function getQuantidadeDisponivel() {
+  fetch('http://localhost:8080/tipo/' + document.getElementById("dropdownMenuButton").nodeValue, { mode: 'no-cors'})
+  .then( data => data.json())
+  .then(console.log)
+  .catch( error => console.log(error));
+
+  console.debug(document.getElementById("dropdownMenuButton").nodeValue);
+}
