@@ -14,7 +14,7 @@ customization. -->
     <meta name="author" content="" />
     <title>Formulário de Doação e Coleta de Sangue | FURB</title>
     <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="../static/assets/favicon.ico" />
     <!-- Font Awesome icons (free version)-->
     <script
       src="https://use.fontawesome.com/releases/v5.15.1/js/all.js"
@@ -69,8 +69,15 @@ customization. -->
             <li class="nav-item mx-0 mx-lg-1">
               <a
                 class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                href="#report"
+                >Relatório</a
+              >
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a
+                class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
                 href="#graphics"
-                >GRÁFICO</a
+                >Gráfico</a
               >
             </li>
           </ul>
@@ -82,7 +89,12 @@ customization. -->
     <header class="masthead bg-primary text-white text-center">
       <div class="container d-flex align-items-center flex-column">
         <!-- Masthead Avatar Image-->
-        <img class="masthead-avatar mb-5" src="../static/assets/blood.png" alt="" id="bloodimg"/>
+        <img
+          class="masthead-avatar mb-5"
+          src="../static/assets/blood.png"
+          alt=""
+          id="bloodimg"
+        />
         <!-- Masthead Heading-->
         <h1 class="masthead-heading text-uppercase mb-0">
           Doação e Coleta de Sangue
@@ -143,7 +155,9 @@ customization. -->
                   class="form-group floating-label-form-group controls mb-0 pb-2"
                 >
                   <label>Sexo</label>
-                  <div class="d-flex justify-content-between align-items-center">
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
                     <span>Sexo</span>
                     <div class="dropdown d-flex justify-content-end">
                       <button
@@ -155,12 +169,12 @@ customization. -->
                         aria-expanded="false"
                       ></button>
                       <div
-                      class="dropdown-menu"
-                      aria-labelledby="dropdownMenuButton"
+                        class="dropdown-menu"
+                        aria-labelledby="dropdownMenuButton"
                       >
-                      <a class="dropdown-item" href="#">Feminino</a>
-                      <a class="dropdown-item" href="#">Masculino</a>
-                    </div>
+                        <a class="dropdown-item" href="#">Feminino</a>
+                        <a class="dropdown-item" href="#">Masculino</a>
+                      </div>
                     </div>
                   </div>
 
@@ -190,7 +204,9 @@ customization. -->
                   class="form-group floating-label-form-group controls mb-0 pb-2"
                 >
                   <label>Tipo Sanguíneo</label>
-                  <div class="d-flex justify-content-between align-items-center">
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
                     <span>Tipo Sanguíneo</span>
                     <div class="dropdown d-flex justify-content-end">
                       <button
@@ -202,18 +218,18 @@ customization. -->
                         aria-expanded="false"
                       ></button>
                       <div
-                      class="dropdown-menu"
-                      aria-labelledby="dropdownMenuButton"
+                        class="dropdown-menu"
+                        aria-labelledby="dropdownMenuButton"
                       >
-                      <a class="dropdown-item" href="#">A+</a>
-                      <a class="dropdown-item" href="#">A-</a>
-                      <a class="dropdown-item" href="#">B-</a>
-                      <a class="dropdown-item" href="#">B+</a>
-                      <a class="dropdown-item" href="#">AB+</a>
-                      <a class="dropdown-item" href="#">AB-</a>
-                      <a class="dropdown-item" href="#">O+</a>
-                      <a class="dropdown-item" href="#">O-</a>
-                    </div>
+                        <a class="dropdown-item" href="#">A+</a>
+                        <a class="dropdown-item" href="#">A-</a>
+                        <a class="dropdown-item" href="#">B-</a>
+                        <a class="dropdown-item" href="#">B+</a>
+                        <a class="dropdown-item" href="#">AB+</a>
+                        <a class="dropdown-item" href="#">AB-</a>
+                        <a class="dropdown-item" href="#">O+</a>
+                        <a class="dropdown-item" href="#">O-</a>
+                      </div>
                     </div>
                   </div>
 
@@ -270,15 +286,98 @@ customization. -->
       </div>
     </section>
 
-    <!-- Gráfico-->
-    <section class="page-section bg-primary text-white mb-0" id="graphics">
+    <!-- Infos Section-->
+    <section class="page-section bg-primary text-white mb-0" id="report">
       <div class="container">
         <!-- About Section Heading-->
         <h2 class="page-section-heading text-center text-uppercase text-white">
-          Relação de Doadores e Receptores
+          Relatório
         </h2>
         <!-- Icon Divider-->
         <div class="divider-custom divider-light">
+          <div class="divider-custom-line"></div>
+          <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+          <div class="divider-custom-line"></div>
+        </div>
+        <!-- About Section Content-->
+        <div class="row">
+          <div class="col-lg-4 ml-auto">
+            <div class="control-group lead>">
+              <div
+                class="form-group floating-label-form-group controls mb-0 pb-2"
+              >
+                <label>Tipo Sanguíneo</label>
+                <div class="d-flex justify-content-between align-items-center">
+                  <span>Tipo Sanguíneo</span>
+                  <div class="dropdown d-flex justify-content-end">
+                    <button
+                      class="btn dropdown-toggle"
+                      type="button"
+                      id="dropdownMenuButton"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    ></button>
+                    <div
+                      class="dropdown-menu"
+                      aria-labelledby="dropdownMenuButton"
+                    >
+                      <a class="dropdown-item" href="#">A+</a>
+                      <a class="dropdown-item" href="#">A-</a>
+                      <a class="dropdown-item" href="#">B-</a>
+                      <a class="dropdown-item" href="#">B+</a>
+                      <a class="dropdown-item" href="#">AB+</a>
+                      <a class="dropdown-item" href="#">AB-</a>
+                      <a class="dropdown-item" href="#">O+</a>
+                      <a class="dropdown-item" href="#">O-</a>
+                    </div>
+                  </div>
+                </div>
+
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mr-auto">
+              <div class="control-group lead">
+                <div
+                  class="form-group floating-label-form-group controls mb-0 pb-2"
+                >
+                  <span>Quantidade de Sangue a Ser Recebido</span>
+                  <p class="help-block text-danger" stylesheet></p>
+                </div>
+                <p class="help-block text-danger"></p>
+                  <div
+                  class="floating-label-form-group controls mb-0 pb-2" style="padding-left: 0px; border-left: 0px;"
+                >
+                <span>Quantidade de Sangue Disponível</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- About Section Button-->
+        <div class="text-center mt-4">
+          <a class="btn btn-xl btn-outline-light" href="">
+            <i class="fas fa-download mr-2"></i>
+            Gerar Relatório
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gráfico-->
+    <section class="page-section mb-0" id="graphics">
+
+      <div class="container">
+        <!-- About Section Heading-->
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">
+          Relação de Doadores e Receptores
+        </h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom divider">
           <div class="divider-custom-line"></div>
           <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
           <div class="divider-custom-line"></div>

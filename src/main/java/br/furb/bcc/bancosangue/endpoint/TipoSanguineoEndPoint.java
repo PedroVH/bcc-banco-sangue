@@ -62,7 +62,6 @@ public class TipoSanguineoEndPoint {
 		}
 		return null;
 	}
- 
 
     @GetMapping(produces = "application/json")
     public ResponseEntity<Object> getAll() {
