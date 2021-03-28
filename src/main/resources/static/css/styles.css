@@ -41,15 +41,12 @@
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
-<<<<<<< HEAD
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
 
-=======
->>>>>>> edcccd18b6e98c96f2fbc45c0f5d101fe2d37ca9
 *,
 *::before,
 *::after {
@@ -2434,16 +2431,6 @@ textarea.form-control {
 .btn:hover {
   text-decoration: none;
 }
-<<<<<<< HEAD
-.tipo-sanguineo {
-  color: #fff;
-}
-.tipo-sanguineo:focus {
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem #fff3cd;
-}
-=======
->>>>>>> edcccd18b6e98c96f2fbc45c0f5d101fe2d37ca9
 .btn:focus, .btn.focus {
   outline: 0;
   box-shadow: 0 0 0 0.2rem #256e9c42;
