@@ -16,24 +16,24 @@ import java.util.Map;
 @RestController
 @RequestMapping("/tipo")
 public class TipoSanguineoEndPoint {
-    AbstractDAO<TipoSanguineo> dao = TipoSanguineoDAO.getInstance();
+	TipoSanguineoDAO dao = TipoSanguineoDAO.getInstance();
     QuantidadePorReceptorController controller = new QuantidadePorReceptorController();
 
-    @GetMapping(value = "/{id}", produces = "application/json")
-    public ResponseEntity<Object> getTipoSanguineo(@PathVariable("id") int id) {
-        TipoSanguineo tipo = dao.find(id);
-        return new ResponseEntity<>(tipo, HttpStatus.OK);
+    @GetMapping(value = "/{tipo}", produces = "application/json")
+    public ResponseEntity<Object> getTipoSanguineo(@PathVariable("tipo") String tipo) {
+        TipoSanguineo tipoSanguineo = dao.findByTipo(tipo);
+        return new ResponseEntity<>(tipoSanguineo, HttpStatus.OK);
     }
 
-    @GetMapping(value = "/{id}/disponivel", produces = "application/json")
-    public ResponseEntity<String> getDisponivel(@PathVariable("id") int id) {
-        String tipoDisponivel = dao.find(id).getQtdDisponivel() + "ml";
+    @GetMapping(value = "/{tipo}/disponivel", produces = "application/json")
+    public ResponseEntity<String> getDisponivel(@PathVariable("tipo") String tipo) {
+        String tipoDisponivel = dao.findByTipo(tipo).getQtdDisponivel() + "ml";
         return new ResponseEntity<>(tipoDisponivel, HttpStatus.OK);
     }
     
-	@GetMapping(value = "/{id}/disponivel/receptor", produces = "application/json")
-	public ResponseEntity<String> getDisponivelReceptor(@PathVariable("id") int id) {
-		TipoSanguineo tipoReceptor = dao.find(id);
+	@GetMapping(value = "/{tipo}/disponivel/receptor", produces = "application/json")
+	public ResponseEntity<String> getDisponivelReceptor(@PathVariable("tipo") String tipo) {
+		TipoSanguineo tipoReceptor = dao.findByTipo(tipo);
 		switch (tipoReceptor.getTipo()) {
 		case "A+":
 			String qtdDisponivelReceptor = controller.getQuantidadeDisponivelAPositivo() + " ml";

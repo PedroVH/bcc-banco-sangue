@@ -2458,7 +2458,7 @@ fieldset:disabled a.btn {
 }
 .btn-primary:focus, .btn-primary.focus {
   color: #fff;
-  background-color: ##2A7DB0;
+  background-color: #2A7DB0;
   border-color: #148f77;
   box-shadow: 0 0 0 0.2rem rgba(60, 198, 171, 0.5);
 }
@@ -10225,5 +10225,5 @@ form .row:first-child .floating-label-form-group {
 }
 
 .copyright {
-  background-color: #1a252f;
+  background-color: #256E9C;
 }
