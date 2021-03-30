@@ -70,12 +70,105 @@
 /*
 *  Get from API
 */
+function getQuantidades(){
+  getQuantidadeDisponivel();
+  getQuantidadeReceptor();
+}
 
 function getQuantidadeDisponivel() {
-  fetch('http://localhost:8080/tipo/' + document.getElementById("dropdownMenuButton").nodeValue, { mode: 'no-cors'})
-  .then( data => data.json())
-  .then(console.log)
-  .catch( error => console.log(error));
+  console.log("http://localhost:8080/tipo/" + document.getElementById("dropdownMenu").value);
+  let abacate = apiGET("http://localhost:8080/tipo/" + document.getElementById("dropdownMenu").value);
+  abacate.then(console.log);
+  abacate.then(setQtdDisponivel);
+}
 
-  console.debug(document.getElementById("dropdownMenuButton").nodeValue);
+function setQtdDisponivel(abacate) {
+  document.getElementById("quantidadeDisponivel").innerText = abacate.data.qtdDisponivel;
+}
+
+function getQuantidadeReceptor() {
+  console.log("http://localhost:8080/tipo/" + document.getElementById("dropdownMenu").value + "/receptor");
+  let abacate = apiGET("http://localhost:8080/tipo/" + document.getElementById("dropdownMenu").value + "/receptor");
+  abacate.then(console.log);
+  abacate.then(setQtdReceptor);
+}
+
+function setQtdReceptor(abacate) {
+  document.getElementById("quantidadeReceptor").innerText = abacate.data;
+}
+
+function apiGET(url) {
+  return fetch(url, {
+      method: 'GET',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+  }).then((response) => {
+      return response.json().then((data) => {
+          let resultData = {data,response};
+          return resultData;
+      })
+  }).catch((error) => {
+      console.log(error);
+      return error;
+  });
+}
+
+function apiPOST(url, requestBody) {
+  return fetch(url, {
+      method: 'POST',
+      withCredentials: true,
+      body: JSON.stringify(requestBody),
+      headers: {
+          'Authorization': `Bearer ${localStorage.token}`,
+          'Content-Type': 'application/json'
+      },
+  }).then((response) => {
+      return response.json().then((data) => {
+          return {data, response};
+      })
+  }).catch((error) => {
+      console.log(error);
+      return error;
+  });
+}
+
+
+function apiDEL(url) {
+  return fetch(url, {
+      method: 'DELETE',
+      withCredentials: true,
+      headers: {
+          'Authorization': `Bearer ${localStorage.token}`,
+          'Content-Type': 'application/json'
+      },
+  }).then((response) => {
+      return response.json().then((data) => {
+          return {data, response};
+      })
+  }).catch((error) => {
+      console.log(error);
+      return error;
+  });
+}
+
+
+function apiEDIT(url, requestBody){
+  return fetch(url, {
+      method: 'PUT',
+      withCredentials: true,
+      body : JSON.stringify(requestBody),
+      headers: {
+          'Authorization': `Bearer ${localStorage.token}`,
+          'Content-Type': 'application/json'
+      },
+  }).then((response) => {
+      return response.json().then((data) => {
+          return {data, response};
+      })
+  }).catch((error) => {
+      console.log(error);
+      return error;
+  });
+  
 }

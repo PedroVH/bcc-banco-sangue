@@ -49,7 +49,7 @@ customization. -->
           class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded"
           type="button"
           data-toggle="collapse"
-          data-target="#navbarResponsive"
+          data-tar="#navbarResponsive"
           aria-controls="navbarResponsive"
           aria-expanded="false"
           aria-label="Toggle navigation"
@@ -163,7 +163,7 @@ customization. -->
                       <button
                         class="btn dropdown-toggle"
                         type="button"
-                        id="dropdownMenuButton"
+                        id="dropdownMenuButtonSexo"
                         data-toggle="dropdown"
                         aria-haspopup="true"
                         aria-expanded="false"
@@ -189,7 +189,7 @@ customization. -->
                   <label>Idade</label>
                   <input
                     class="form-control"
-                    id="phone"
+                    id="idade"
                     type="number"
                     placeholder="Idade"
                     required="required"
@@ -209,27 +209,15 @@ customization. -->
                   >
                     <span>Tipo Sanguíneo</span>
                     <div class="dropdown d-flex justify-content-end">
-                      <button
-                        class="btn dropdown-toggle"
-                        type="button"
-                        id="dropdownMenuButton"
-                        data-toggle="dropdown"
-                        aria-haspopup="true"
-                        aria-expanded="false"
-                      ></button>
-                      <div
-                        class="dropdown-menu"
-                        aria-labelledby="dropdownMenuButton"
-                      >
-                        <a class="dropdown-item">A+</a>
-                        <a class="dropdown-item">A-</a>
-                        <a class="dropdown-item">B-</a>
-                        <a class="dropdown-item">B+</a>
-                        <a class="dropdown-item">AB+</a>
-                        <a class="dropdown-item">AB-</a>
-                        <a class="dropdown-item">O+</a>
-                        <a class="dropdown-item">O-</a>
-                      </div>
+                      <select id="dropdownMenuCadastro">
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B-">B-</option>
+                        <option value="B+">B+</option>
+                        <option value="AB+">AB+</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                      </select>
                     </div>
                   </div>
 
@@ -310,28 +298,15 @@ customization. -->
                 <div class="d-flex justify-content-between align-items-center">
                   <span>Tipo Sanguíneo</span>
                   <div class="dropdown d-flex justify-content-end">
-                    <button
-                      class="btn dropdown-toggle"
-                      type="button"
-                      id="dropdownMenuButton"
-                      data-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                      style="color: white;"
-                    ></button>
-                    <div
-                      class="dropdown-menu"
-                      aria-labelledby="dropdownMenuButton"
-                    >
-                      <a class="dropdown-item">A+</a>
-                      <a class="dropdown-item">A-</a>
-                      <a class="dropdown-item">B-</a>
-                      <a class="dropdown-item">B+</a>
-                      <a class="dropdown-item">AB+</a>
-                      <a class="dropdown-item">AB-</a>
-                      <a class="dropdown-item">O+</a>
-                      <a class="dropdown-item">O-</a>
-                    </div>
+                    <select id="dropdownMenu">
+                      <option value="A+">A+</option>
+                      <option value="A-">A-</option>
+                      <option value="B-">B-</option>
+                      <option value="B+">B+</option>
+                      <option value="AB+">AB+</option>
+                      <option value="O+">O+</option>
+                      <option value="O-">O-</option>
+                    </select>                    
                   </div>
                 </div>
 
@@ -345,14 +320,14 @@ customization. -->
                 <div
                   class="form-group floating-label-form-group controls mb-0 pb-2"
                 >
-                  <span>Quantidade de Sangue a Ser Recebido</span>
+                  <span><var id = "quantidadeDisponivel">Quantidade</var> de Sangue a Ser Recebido</span>
                   <p class="help-block text-danger"></p>
                 </div>
                 <p class="help-block text-danger"></p>
                   <div
                   class="floating-label-form-group controls mb-0 pb-2" style="padding-left: 0px; border-left: 0px;"
                 >
-                <span>Quantidade de Sangue Disponível</span>
+                <span><var id = "quantidadeReceptor">Quantidade</var> de Sangue Disponível</span>
               </div>
             </div>
           </div>
@@ -361,7 +336,7 @@ customization. -->
 
         <!-- About Section Button-->
         <div class="text-center mt-4">
-          <a class="btn btn-xl btn-outline-light">
+          <a class="btn btn-xl btn-outline-light" onclick= "getQuantidades()">
             <i class="fas fa-download mr-2"></i>
             Gerar Relatório
           </a>
