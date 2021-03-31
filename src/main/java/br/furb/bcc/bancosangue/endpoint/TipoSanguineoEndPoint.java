@@ -56,6 +56,14 @@ public class TipoSanguineoEndPoint {
 		return null;
 	}
 
+	@PutMapping(value = "/{tipo}/{qtd}", produces = "application/json")
+	public ResponseEntity<Object> addQtdAoTipo(@PathVariable("tipo") String tipo, @PathVariable("qtd") long qtd){
+		TipoSanguineo tipoSanguineo = dao.findByTipo(tipo);
+		tipoSanguineo.setQtdDisponivel(tipoSanguineo.getQtdDisponivel() + qtd);
+		dao.update(tipoSanguineo.getId(), tipoSanguineo);
+		return new ResponseEntity<>(tipoSanguineo, HttpStatus.OK);
+	}
+
     @GetMapping(produces = "application/json")
     public ResponseEntity<Object> getAll() {
         Map<String, String> responseObj = new HashMap<>();

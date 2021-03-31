@@ -135,138 +135,39 @@ customization. -->
             <form id="contactForm" name="sentMessage" novalidate="novalidate">
               <div class="control-group">
                 <div
-                  class="form-group floating-label-form-group controls mb-0 pb-2"
+                class="form-group floating-label-form-group controls mb-0 pb-2"
                 >
-                  <label>Nome</label>
-                  <input
-                    class="form-control"
-                    id="name"
-                    type="text"
-                    placeholder="Nome"
-                    required="required"
-                    data-validation-required-message="Por favor digite seu nome."
-                  />
-                  <p class="help-block text-danger"></p>
-                </div>
-              </div>
-
-              <div class="control-group>">
-                <div
-                  class="form-group floating-label-form-group controls mb-0 pb-2"
-                >
-                  <label>Sexo</label>
-                  <div
-                    class="d-flex justify-content-between align-items-center"
-                  >
-                    <span>Sexo</span>
-                    <div class="dropdown d-flex justify-content-end">
-                      <button
-                        class="btn dropdown-toggle"
-                        type="button"
-                        id="dropdownMenuButtonSexo"
-                        data-toggle="dropdown"
-                        aria-haspopup="true"
-                        aria-expanded="false"
-                      ></button>
-                      <div
-                        class="dropdown-menu"
-                        aria-labelledby="dropdownMenuButton"
-                      >
-                        <a class="dropdown-item">Feminino</a>
-                        <a class="dropdown-item">Masculino</a>
-                      </div>
-                    </div>
-                  </div>
-
-                  <p class="help-block text-danger"></p>
-                </div>
-              </div>
-
-              <div class="control-group">
-                <div
-                  class="form-group floating-label-form-group controls mb-0 pb-2"
-                >
-                  <label>Idade</label>
-                  <input
-                    class="form-control"
-                    id="idade"
-                    type="number"
-                    placeholder="Idade"
-                    required="required"
-                    data-validation-required-message="Por favor digite sua idade."
-                  />
-                  <p class="help-block text-danger"></p>
-                </div>
-              </div>
-
-              <div class="control-group>">
-                <div
-                  class="form-group floating-label-form-group controls mb-0 pb-2"
-                >
-                  <label>Tipo Sanguíneo</label>
-                  <div
-                    class="d-flex justify-content-between align-items-center"
-                  >
-                    <span>Tipo Sanguíneo</span>
-                    <div class="dropdown d-flex justify-content-end">
-                      <select id="dropdownMenuCadastro">
-                        <option value="A+">A+</option>
-                        <option value="A-">A-</option>
-                        <option value="B-">B-</option>
-                        <option value="B+">B+</option>
-                        <option value="AB+">AB+</option>
-                        <option value="O+">O+</option>
-                        <option value="O-">O-</option>
+                <label>Tipo Sanguíneo</label>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="dropdown d-flex justify-content-center">
+                    <div class="selectRelatorioForm">
+                      <select id="dropdownMenuCadastro" style="color:black">
+                        <option class="optionItem" value="A+">A+</option>
+                        <option class="optionItem" value="A-">A-</option>
+                        <option class="optionItem" value="B+">B+</option>
+                        <option class="optionItem" value="B-">B-</option>
+                        <option class="optionItem" value="AB+">AB+</option>
+                        <option class="optionItem" value="AB-">AB-</option>
+                        <option class="optionItem" value="O+">O+</option>
+                        <option class="optionItem" value="O-">O-</option>
                       </select>
                     </div>
                   </div>
-
-                  <p class="help-block text-danger"></p>
+                  <div class="qntdDepositar d-flex justify-content-center">
+                    <input type="number" id="qntdDepositar" placeholder="Quantidade em Ml" name="Quantidade">
+                  </div>
                 </div>
-              </div>
 
-              <div class="control-group">
-                <div
-                  class="form-group floating-label-form-group controls mb-0 pb-2"
-                >
-                  <label>Quantidade de Sangue</label>
-                  <input
-                    class="form-control"
-                    id="phone"
-                    type="number"
-                    placeholder="Quantidade de Sangue"
-                    required="required"
-                    data-validation-required-message="Por favor digite a quantidade de sangue."
-                  />
-                  <p class="help-block text-danger"></p>
-                </div>
+                <p class="help-block text-danger"></p>
               </div>
-
-              <div class="control-group">
-                <div
-                  class="form-group floating-label-form-group controls mb-0 pb-2"
-                >
-                  <label>Outros dados</label>
-                  <textarea
-                    class="form-control"
-                    id="message"
-                    rows="5"
-                    placeholder="Outros dados"
-                  ></textarea>
-                  <p class="help-block text-danger"></p>
-                </div>
-              </div>
-
               <br />
-              <div id="success"></div>
-              <div class="form-group">
-                <button
-                  class="btn btn-primary btn-xl"
-                  id="sendMessageButton"
-                  type="submit"
-                >
+              <div class="text-center mt-4">
+                <a class="btn btn-xl btn-primary-form" onclick= "sendQtdParaOTipo()">
                   Enviar
-                </button>
+                </a>
+                <a class="btn btn-xl btn-primary-form" onclick= "deleteQtdParaOTipo()">
+                  Remover
+                </a>
               </div>
             </form>
           </div>
@@ -318,19 +219,29 @@ customization. -->
           </div>
 
           <div class="col-lg-4 mr-auto">
-              <div class="control-group lead">
-                <div
-                  class="form-group floating-label-form-group controls mb-0 pb-2"
-                >
-                  <span><var id = "quantidadeDisponivel">Quantidade</var> de Sangue a Ser Recebido</span>
-                  <p class="help-block text-danger"></p>
+            <div class="control-group lead">
+              <div
+                class="form-group floating-label-form-group controls mb-0 pb-2"
+              >
+                <div class="d-flex" style="display:flex">
+                  <span>
+                    <var id="quantidadeDisponivel">Quantidade</var> de Sangue Disponível
+                  </span>
+                  <div id="dispLoader" class="loader" style="display:none;"></div>
                 </div>
                 <p class="help-block text-danger"></p>
-                  <div
-                  class="floating-label-form-group controls mb-0 pb-2" style="padding-left: 0px; border-left: 0px;"
-                >
-                <span><var id = "quantidadeReceptor">Quantidade</var> de Sangue Disponível</span>
               </div>
+              <p class="help-block text-danger"></p>
+                <div
+                class="floating-label-form-group controls mb-0 pb-2" style="padding-left: 0px; border-left: 0px;"
+              >
+                <div class="d-flex" style="display:flex">
+                  <span>
+                    <var id="quantidadeReceptor">Quantidade</var> de Sangue a Ser Recebido
+                  </span>
+                  <div id="recepLoader" class="loader" style="display:none;"></div>
+                </div>                
+            </div>
             </div>
           </div>
 
@@ -339,7 +250,6 @@ customization. -->
         <!-- About Section Button-->
         <div class="text-center mt-4">
           <a class="btn btn-xl btn-outline-light" onclick= "getQuantidades()">
-            <i class="fas fa-download mr-2"></i>
             Gerar Relatório
           </a>
         </div>

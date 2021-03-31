@@ -68,35 +68,83 @@
   })(jQuery); // End of use strict
 
 /*
-*  Get from API
+* My Functions
+* =============================================================================
 */
+
+/**
+ * Edit
+ * ----------------------------------------------------------------------------
+ */
+function sendQtdParaOTipo(){
+  let url = "http://localhost:8080/tipo/" + document.getElementById("dropdownMenuCadastro").value + "/" + document.getElementById("qntdDepositar").value;
+  console.log(url);
+  let abacate = apiEDIT(url);
+  abacate.then(console.log);
+}
+
+function deleteQtdParaOTipo(){
+  let url = "http://localhost:8080/tipo/" + document.getElementById("dropdownMenuCadastro").value + "/" + -document.getElementById("qntdDepositar").value;
+  console.log(url);
+  let abacate = apiEDIT(url);
+  abacate.then(console.log);
+}
+
+/**
+ * Get
+ * -----------------------------------------------------------------------------
+ */
 function getQuantidades(){
+  loaderIcon();
+}
+
+function loaderIcon(){
+  document.getElementById("dispLoader").style.display = "inline-block";
+  document.getElementById("recepLoader").style.display = "inline-block";
   getQuantidadeDisponivel();
   getQuantidadeReceptor();
+}
+
+function hideLoaderIconDisp(){
+  document.getElementById("dispLoader").style.display = "none";
+}
+
+function hideLoaderIconRecep(){
+  document.getElementById("recepLoader").style.display = "none";
 }
 
 function getQuantidadeDisponivel() {
   console.log("http://localhost:8080/tipo/" + document.getElementById("dropdownMenu").value);
   let abacate = apiGET("http://localhost:8080/tipo/" + document.getElementById("dropdownMenu").value);
   abacate.then(console.log);
-  abacate.then(setQtdDisponivel);
+  abacate.then((data) => {
+    setQtdDisponivel(data);
+    hideLoaderIconDisp();
+  });
 }
 
 function setQtdDisponivel(abacate) {
-  document.getElementById("quantidadeDisponivel").innerText = abacate.data.qtdDisponivel;
+  document.getElementById("quantidadeDisponivel").innerText = abacate.data.qtdDisponivel + "ml";
 }
 
 function getQuantidadeReceptor() {
   console.log("http://localhost:8080/tipo/" + document.getElementById("dropdownMenu").value + "/receptor");
   let abacate = apiGET("http://localhost:8080/tipo/" + document.getElementById("dropdownMenu").value + "/receptor");
   abacate.then(console.log);
-  abacate.then(setQtdReceptor);
+  abacate.then((data) => {
+    setQtdReceptor(data);
+    hideLoaderIconRecep();
+  });
 }
 
 function setQtdReceptor(abacate) {
-  document.getElementById("quantidadeReceptor").innerText = abacate.data;
+  document.getElementById("quantidadeReceptor").innerText = abacate.data + "ml";
 }
 
+/*
+*  Get from API
+* ------------------------------------------------------------------------------
+*/
 function apiGET(url) {
   return fetch(url, {
       method: 'GET',
@@ -114,52 +162,14 @@ function apiGET(url) {
   });
 }
 
-function apiPOST(url, requestBody) {
-  return fetch(url, {
-      method: 'POST',
-      withCredentials: true,
-      body: JSON.stringify(requestBody),
-      headers: {
-          'Authorization': `Bearer ${localStorage.token}`,
-          'Content-Type': 'application/json'
-      },
-  }).then((response) => {
-      return response.json().then((data) => {
-          return {data, response};
-      })
-  }).catch((error) => {
-      console.log(error);
-      return error;
-  });
-}
-
-
-function apiDEL(url) {
-  return fetch(url, {
-      method: 'DELETE',
-      withCredentials: true,
-      headers: {
-          'Authorization': `Bearer ${localStorage.token}`,
-          'Content-Type': 'application/json'
-      },
-  }).then((response) => {
-      return response.json().then((data) => {
-          return {data, response};
-      })
-  }).catch((error) => {
-      console.log(error);
-      return error;
-  });
-}
-
-
-function apiEDIT(url, requestBody){
+/**
+ * Edit in API
+ * ------------------------------------------------------------------------------
+ */
+function apiEDIT(url){
   return fetch(url, {
       method: 'PUT',
-      withCredentials: true,
-      body : JSON.stringify(requestBody),
       headers: {
-          'Authorization': `Bearer ${localStorage.token}`,
           'Content-Type': 'application/json'
       },
   }).then((response) => {
