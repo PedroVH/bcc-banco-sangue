@@ -10227,3 +10227,20 @@ form .row:first-child .floating-label-form-group {
 .copyright {
   background-color: #256E9C;
 }
+
+.selectRelatorio select  {
+	background: transparent; 
+  font-family: 'Lato';
+  font-size: 20px;
+  border: 1px solid #f04444;
+  color:white;
+
+}
+
+.selectRelatorio select option[value]:checked{
+  color:black;
+}
+
+.optionItem {
+  color:black;
+}
