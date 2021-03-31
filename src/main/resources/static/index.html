@@ -131,17 +131,17 @@ customization. -->
 
         <!-- Contact Section Form-->
         <div class="row">
-          <div class="col-lg-8 mx-auto">
+          <div class="col-lg-6 mx-auto">
             <form id="contactForm" name="sentMessage" novalidate="novalidate">
               <div class="control-group">
                 <div
                 class="form-group floating-label-form-group controls mb-0 pb-2"
                 >
-                <label>Tipo Sanguíneo</label>
-                <div class="d-flex justify-content-between align-items-center">
+                <label style="color:black;">Tipo Sanguíneo</label>
+                <div class="d-flex justify-content-around align-items-center">
                   <div class="dropdown d-flex justify-content-center">
                     <div class="selectRelatorioForm">
-                      <select id="dropdownMenuCadastro" style="color:black">
+                      <select id="dropdownMenuCadastro" style="color:black; padding: 0.8rem;">
                         <option class="optionItem" value="A+">A+</option>
                         <option class="optionItem" value="A-">A-</option>
                         <option class="optionItem" value="B+">B+</option>
@@ -154,18 +154,18 @@ customization. -->
                     </div>
                   </div>
                   <div class="qntdDepositar d-flex justify-content-center">
-                    <input type="number" id="qntdDepositar" placeholder="Quantidade em Ml" name="Quantidade">
+                    <input type="number" id="qntdDepositar" placeholder="Quantidade em Ml" name="Quantidade" style="padding: 0.5rem">
                   </div>
                 </div>
 
                 <p class="help-block text-danger"></p>
               </div>
               <br />
-              <div class="text-center mt-4">
-                <a class="btn btn-xl btn-primary-form" onclick= "sendQtdParaOTipo()">
+              <div class="text-center mt-4 d-flex justify-content-center">
+                <a class="btn btn-lg btn-primary-form" onclick= "sendQtdParaOTipo()">
                   Enviar
                 </a>
-                <a class="btn btn-xl btn-primary-form" onclick= "deleteQtdParaOTipo()">
+                <a class="btn btn-lg btn-primary-form" onclick= "deleteQtdParaOTipo()" style="margin-left:1rem">
                   Remover
                 </a>
               </div>
@@ -199,7 +199,7 @@ customization. -->
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="dropdown d-flex justify-content-end">
                     <div class="selectRelatorio">
-                      <select id="dropdownMenu">
+                      <select id="dropdownMenu" style="padding: 0.8rem;">
                         <option class="optionItem" value="A+">A+</option>
                         <option class="optionItem" value="A-">A-</option>
                         <option class="optionItem" value="B+">B+</option>
