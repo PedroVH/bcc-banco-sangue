@@ -26,9 +26,9 @@ public class TipoSanguineoDAO extends AbstractDAO<TipoSanguineo> {
         Root<TipoSanguineo> rootDepartment = criteria.from(getClazz());
         criteria.select(rootDepartment).where(builder.like(rootDepartment.get("tipo"), tipo));
 
-        List<TipoSanguineo> departments = session.createQuery(criteria).getResultList();
-        if (departments.size() != 0)
-            return departments.get(0);
+        List<TipoSanguineo> tipos = session.createQuery(criteria).getResultList();
+        if (tipos.size() != 0)
+            return tipos.get(0);
 
         return null;
     }

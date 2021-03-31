@@ -128,7 +128,21 @@ customization. -->
           <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
           <div class="divider-custom-line"></div>
         </div>
-
+        <div class="row">
+          <div class="dropdown d-flex justify-content-center">
+            <div class="qntdDepositar d-flex justify-content-center">
+              <input type="number" id="pessoaField" placeholder="ID da pessoa" name="pessoa" style="margin-right: 10px;">
+            </div>
+            <div class="text-center mt-4 d-flex justify-content-center">
+              <a class="btn btn-lg btn-primary-form" onclick="getPessoa()">
+                Buscar
+              </a>
+            </div>
+            <div>
+              <label id="infoPessoaLabel" style="font-family: Lato; text-align: center;">Informações da Pessoa.</label>
+            </div>
+          </div>
+        </div>
         <!-- Contact Section Form-->
         <div class="row">
           <div class="col-lg-6 mx-auto">

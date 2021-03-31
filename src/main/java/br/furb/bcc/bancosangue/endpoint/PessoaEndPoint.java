@@ -5,26 +5,31 @@ import java.util.Map;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import br.furb.bcc.bancosangue.dao.PessoaDAO;
 import br.furb.bcc.bancosangue.model.Pessoa;
 
+@CrossOrigin
+@RestController
+@RequestMapping("/pessoa")
 public class PessoaEndPoint {
 	ResponseEntity<Object> responseEntity;
-	
-	@GetMapping("/pessoa")
-    public String home(@RequestParam(value = "id") int id) {
-        Pessoa pessoa = PessoaDAO.getInstance().find(id);
-        return "Nome: " + pessoa.getNome()
-        	 + "Idade: " + pessoa.getIdade()
-        	 +  "Sexo: " + pessoa.getSexo() 
-        	 + "Tipo Sanguíneo" + pessoa.getTipoSanguineo().getTipo();
+
+	@GetMapping("/{id}")
+	public ResponseEntity<Object> get(@PathVariable(value = "id") int id) {
+		Pessoa pessoa = PessoaDAO.getInstance().find(id);
+		System.out.println(pessoa);
+		return new ResponseEntity<>(pessoa, HttpStatus.OK);
+	}
+
+	@GetMapping("/nome/{nome}")
+    public ResponseEntity<Object> getNome(@PathVariable(value = "nome") String nome) {
+        Pessoa pessoa = PessoaDAO.getInstance().findByNome(nome);
+		System.out.println(pessoa);
+        return new ResponseEntity<>(pessoa, HttpStatus.OK);
     }
-	
+	/*
 	@PostMapping(produces = "application/json", consumes = "application/json")
 	public ResponseEntity<Object> insert(@RequestBody Pessoa pessoa) {
 		Map<String, String> responseObj = new HashMap<>();
@@ -46,5 +51,5 @@ public class PessoaEndPoint {
 		}
 
 		return responseEntity;
-	}
+	}*/
 }

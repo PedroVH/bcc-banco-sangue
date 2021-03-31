@@ -100,6 +100,24 @@ function deleteQtdParaOTipo(){
  * Get
  * -----------------------------------------------------------------------------
  */
+function getPessoa() {
+  console.log("http://localhost:8080/pessoa/" + document.getElementById("pessoaField").value);
+  let abacate = apiGET("http://localhost:8080/pessoa/" + document.getElementById("pessoaField").value);
+  abacate.then(setPessoaInfo);
+}
+
+function setPessoaInfo(data){
+  console.log(data);
+  console.log(data.nome);
+  let texto = "<b> Nome: </b>" + data.data.nome +
+              "<b> Idade: </b>" + data.data.idade +
+              "<br>" + 
+              "<b> Sexo: </b>" + data.data.sexo +
+              "<b> Tipo Sanguíneo: </b>" + data.data.tipoSanguineo.tipo;
+
+  document.getElementById("infoPessoaLabel").innerHTML = texto;
+}
+
 function getQuantidades(){
   loaderIcon();
 }
