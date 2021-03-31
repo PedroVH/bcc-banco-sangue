@@ -81,6 +81,9 @@ function sendQtdParaOTipo(){
   console.log(url);
   let abacate = apiEDIT(url);
   abacate.then(console.log);
+  abacate.then((data) => {
+    location.reload();
+  });
 }
 
 function deleteQtdParaOTipo(){
@@ -88,6 +91,9 @@ function deleteQtdParaOTipo(){
   console.log(url);
   let abacate = apiEDIT(url);
   abacate.then(console.log);
+  abacate.then((data) => {
+    location.reload();
+  });
 }
 
 /**
